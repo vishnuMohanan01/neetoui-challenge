@@ -8,9 +8,9 @@ import notesApi from "apis/notes";
 import EmptyState from "components/Common/EmptyState";
 
 import DeleteAlert from "./DeleteAlert";
+import ListCards from "./ListCards";
 import MenuBar from "./MenuBar";
 import NewNotePane from "./Pane/Create";
-import Table from "./Table";
 
 const Notes = () => {
   const [loading, setLoading] = useState(true);
@@ -61,11 +61,7 @@ const Notes = () => {
           }}
         />
         {notes.length ? (
-          <Table
-            fetchNotes={fetchNotes}
-            notes={notes}
-            setSelectedNoteIds={setSelectedNoteIds}
-          />
+          <ListCards notes={notes} />
         ) : (
           <EmptyState
             image={EmptyNotesListImage}
