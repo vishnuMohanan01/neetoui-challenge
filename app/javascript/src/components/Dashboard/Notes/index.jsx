@@ -3,12 +3,13 @@ import React, { useState, useEffect } from "react";
 import EmptyNotesListImage from "images/EmptyNotesList";
 import { Delete } from "neetoicons";
 import { Button, PageLoader } from "neetoui";
-import { Container, Header, SubHeader } from "neetoui/layouts";
+import { Header, SubHeader } from "neetoui/layouts";
 
 import notesApi from "apis/notes";
 import EmptyState from "components/Common/EmptyState";
 
 import DeleteAlert from "./DeleteAlert";
+import MenuBar from "./MenuBar";
 import NewNotePane from "./Pane/Create";
 import Table from "./Table";
 
@@ -19,6 +20,7 @@ const Notes = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedNoteIds, setSelectedNoteIds] = useState([]);
   const [notes, setNotes] = useState([]);
+  const [showMenuBar, setShowMenuBar] = useState(false);
 
   useEffect(() => {
     fetchNotes();
@@ -41,9 +43,10 @@ const Notes = () => {
   }
 
   return (
-    <Container>
+    <div>
+      <MenuBar showMenu={showMenuBar} />
       <Header
-        menuBarToggle={function noRefCheck() {}}
+        menuBarToggle={() => setShowMenuBar(showMenuBar => !showMenuBar)}
         title="All Notes"
         actionBlock={
           <Button
@@ -97,7 +100,7 @@ const Notes = () => {
           onClose={() => setShowDeleteAlert(false)}
         />
       )}
-    </Container>
+    </div>
   );
 };
 
