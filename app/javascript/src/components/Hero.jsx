@@ -17,10 +17,10 @@ const Features = ({ features }) => (
 const Hero = () => (
   <div className="flex h-screen flex-row items-center justify-center">
     <div className="m-auto flex max-w-3xl flex-col items-center justify-center p-8">
-      <h1 className="mb-3 text-4xl font-bold">Wheel</h1>
+      <h1 className="mb-3 text-4xl font-bold">neetoui-challenge</h1>
       <p className="mx-auto mb-6 text-center text-lg text-gray-800">
-        Don&apos;t reinvent the wheel. Use sane defaults to bootstrap your
-        react-rails project!
+        Don&apos;t reinvent the neetoui-challenge. Use sane defaults to
+        bootstrap your react-rails project!
       </p>
       <Features features={FEATURE_LIST} />
       <div className="mt-6 flex items-center justify-center">
