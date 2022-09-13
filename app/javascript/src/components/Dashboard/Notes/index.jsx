@@ -57,6 +57,7 @@ const Notes = () => {
           }
           searchProps={{
             value: searchTerm,
+            placeholder: "Search Name, Email, Phone Number, Ect.",
             onChange: e => setSearchTerm(e.target.value),
           }}
         />
