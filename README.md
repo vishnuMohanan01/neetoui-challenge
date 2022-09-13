@@ -1,11 +1,11 @@
-[![Build Status](https://bigbinary.semaphoreci.com/badges/wheel/branches/master.svg?style=shields)](https://bigbinary.semaphoreci.com/projects/wheel)
+<!-- [![Build Status](https://bigbinary.semaphoreci.com/badges/neetoui-challenge/branches/master.svg?style=shields)](https://bigbinary.semaphoreci.com/projects/neetoui-challenge) -->
 
 Made by the team at [BigBinary](https://bigbinary.com), this is a base project to quickly spin up a
 Rails application built with opinions of BigBinary style of working.
 
 ## Local Development Setup
 
-Clone this repo by running `git clone https://github.com/bigbinary/wheel.git`.
+Clone this repo by running `git clone https://github.com/vishnuMohanan01/neetoui-challenge.git`.
 
 Install the [Node.js](https://nodejs.org) version `v16.5` which we have specified inside the `.node-version` file.
 
@@ -30,16 +30,16 @@ Visit http://localhost:3000 and login with email `oliver@example.com` and passwo
 
 ## Using docker for development
 
-Follow the instructions mentioned [here](https://github.com/bigbinary/wheel/blob/master/docs/using_docker.md) to use docker for development.
+Follow the instructions mentioned [here](https://github.com/vishnuMohanan01/neetoui-challenge/blob/master/docs/using_docker.md) to use docker for development.
 
-## Replace Wheel with your project name
+## Replace neetoui-challenge with your project name
 
 Let's say that the project name is `Pump`. Execute the command below to
-replace all occurrences of `Wheel` with `Pump`.
+replace all occurrences of `neetoui-challenge` with `Pump`.
 
 ```bash
-perl -pi -w -e 's/Wheel/Pump/g;' $(git ls-files)
-perl -pi -w -e 's/wheel/Pump/g;' $(git ls-files)
+perl -pi -w -e 's/neetoui-challenge/Pump/g;' $(git ls-files)
+perl -pi -w -e 's/neetoui-challenge/Pump/g;' $(git ls-files)
 ```
 
 ## Features
@@ -52,7 +52,7 @@ perl -pi -w -e 's/wheel/Pump/g;' $(git ls-files)
 - Uses slim for cleaner syntax over erb and better performance over haml.
 - Uses [ActiveAdmin](http://activeadmin.info).
 - Uses [Sidekiq](https://github.com/mperham/sidekiq).
-- Intercepts all outgoing emails in non production environment using gem [mail_interceptor](https://github.com/bigbinary/mail_interceptor).
+- Intercepts all outgoing emails in non production environment using gem [mail_interceptor](https://github.com/vishnuMohanan01/mail_interceptor).
 - Uses [SemaphoreCI](https://semaphoreci.com/) for continuous testing.
 - Uses PostgreSQL.
 - Content compression via [Rack::Deflater](https://github.com/rack/rack/blob/master/lib/rack/deflater.rb).
@@ -71,4 +71,4 @@ automatically deploys an application for that branch.
 
 ![BigBinary](https://raw.githubusercontent.com/bigbinary/bigbinary-assets/press-assets/PNG/logo-light-solid-small.png?raw=true)
 
-wheel is maintained by [BigBinary](https://www.BigBinary.com). BigBinary is a software consultancy company. We build web and mobile applications using Ruby on Rails, React.js, React Native and Node.js.
+neetoui-challenge is maintained by [BigBinary](https://www.BigBinary.com). BigBinary is a software consultancy company. We build web and mobile applications using Ruby on Rails, React.js, React Native and Node.js.
