@@ -1,4 +1,4 @@
-[![Build Status](https://bigbinary.semaphoreci.com/badges/neetoui-challenge/branches/master.svg?style=shields)](https://bigbinary.semaphoreci.com/projects/neetoui-challenge)
+<!-- [![Build Status](https://bigbinary.semaphoreci.com/badges/neetoui-challenge/branches/master.svg?style=shields)](https://bigbinary.semaphoreci.com/projects/neetoui-challenge) -->
 
 Made by the team at [BigBinary](https://bigbinary.com), this is a base project to quickly spin up a
 Rails application built with opinions of BigBinary style of working.
