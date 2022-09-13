@@ -8,7 +8,7 @@ import notesApi from "apis/notes";
 import EmptyState from "components/Common/EmptyState";
 
 import DeleteAlert from "./DeleteAlert";
-import ListCards from "./ListCards";
+import ListNoteCards from "./ListNoteCards";
 import MenuBar from "./MenuBar";
 import NewNotePane from "./Pane/Create";
 
@@ -62,7 +62,7 @@ const Notes = () => {
           }}
         />
         {notes.length ? (
-          <ListCards notes={notes} />
+          <ListNoteCards notes={notes} />
         ) : (
           <EmptyState
             image={EmptyNotesListImage}

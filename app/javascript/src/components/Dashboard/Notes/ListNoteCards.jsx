@@ -2,11 +2,20 @@ import React from "react";
 
 import Card from "components/Card";
 
-import { NOTES_CARD_DROPDOWN_OPTIONS } from "./constants";
 import { calculateAge, formatTime } from "./utils/prettyPrintTime";
 
-const ListCards = ({ notes = [] }) => {
+const ListNoteCards = ({ notes = [] }) => {
   const getCreatedAtText = timeStamp => `Created ${calculateAge(timeStamp)}`;
+  const getDropDownItems = () => [
+    {
+      name: "Edit",
+      func: () => {},
+    },
+    {
+      name: "Delete",
+      func: () => {},
+    },
+  ];
 
   return (
     <>
@@ -14,7 +23,7 @@ const ListCards = ({ notes = [] }) => {
         <Card
           avatarUrl={"https://i.pravatar.cc/300"}
           description={note.description}
-          dropDownItems={NOTES_CARD_DROPDOWN_OPTIONS}
+          dropDownItems={getDropDownItems()}
           key={note.id}
           tinyText={getCreatedAtText(note.created_at)}
           title={note.title}
@@ -25,4 +34,4 @@ const ListCards = ({ notes = [] }) => {
   );
 };
 
-export default ListCards;
+export default ListNoteCards;

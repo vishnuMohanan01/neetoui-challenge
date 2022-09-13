@@ -24,14 +24,3 @@ export const NOTES_TABLE_COLUMN_DATA = [
     width: "70%",
   },
 ];
-
-export const NOTES_CARD_DROPDOWN_OPTIONS = [
-  {
-    name: "Edit",
-    component: () => {},
-  },
-  {
-    name: "Delete",
-    component: () => {},
-  },
-];
