@@ -43,6 +43,7 @@ const Notes = () => {
   return (
     <Container>
       <Header
+        menuBarToggle={function noRefCheck() {}}
         title="All Notes"
         actionBlock={
           <Button
