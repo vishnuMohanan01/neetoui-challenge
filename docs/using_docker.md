@@ -3,7 +3,7 @@
 ## Docker for development environment
 
 - Install [Docker](https://docs.docker.com/get-docker/).
-- Clone this repo by running `git clone https://github.com/bigbinary/neetoui-challenge.git`.
+- Clone this repo by running `git clone https://github.com/vishnuMohanan01/neetoui-challenge.git`.
 - `cd neetoui-challenge`
 - If using it for the first time, run `docker-compose build` to build the images.
 - Run `docker-compose run --rm web bin/setup` to create and seed the database.
