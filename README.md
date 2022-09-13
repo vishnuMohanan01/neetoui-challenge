@@ -69,6 +69,6 @@ automatically deploys an application for that branch.
 
 ## About BigBinary
 
-![BigBinary](https://raw.githubusercontent.com/vishnuMohanan01/bigbinary-assets/press-assets/PNG/logo-light-solid-small.png?raw=true)
+![BigBinary](https://raw.githubusercontent.com/bigbinary/bigbinary-assets/press-assets/PNG/logo-light-solid-small.png?raw=true)
 
 neetoui-challenge is maintained by [BigBinary](https://www.BigBinary.com). BigBinary is a software consultancy company. We build web and mobile applications using Ruby on Rails, React.js, React Native and Node.js.
