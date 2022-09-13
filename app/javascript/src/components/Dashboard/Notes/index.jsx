@@ -43,7 +43,7 @@ const Notes = () => {
   }
 
   return (
-    <div className="flex">
+    <>
       <MenuBar showMenu={showMenuBar} />
       <Container>
         <Header
@@ -102,7 +102,7 @@ const Notes = () => {
           />
         )}
       </Container>
-    </div>
+    </>
   );
 };
 
