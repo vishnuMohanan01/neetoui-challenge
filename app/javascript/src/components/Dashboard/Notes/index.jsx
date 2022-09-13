@@ -43,7 +43,7 @@ const Notes = () => {
   return (
     <Container>
       <Header
-        title="Notes"
+        title="All Notes"
         actionBlock={
           <Button
             icon="ri-add-line"
