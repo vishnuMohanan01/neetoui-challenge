@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Search, Settings, Plus } from "neeto-icons";
+import { Search, Settings, Plus } from "neetoicons";
 import { Typography } from "neetoui";
 import { MenuBar as NeetoUIMenuBar } from "neetoui/layouts";
 import PropType from "prop-types";
