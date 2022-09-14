@@ -1,6 +1,6 @@
 import React from "react";
 
-import { MenuVertical, Clock } from "@bigbinary/neeto-icons";
+import { MenuVertical, Clock } from "neeto-icons";
 import { Tag, Typography, Dropdown, Avatar, Tooltip } from "neetoui";
 import PropTypes from "prop-types";
 
