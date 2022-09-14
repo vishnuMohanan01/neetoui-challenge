@@ -30,12 +30,12 @@ const NoteForm = ({ onClose, refetch, note, isEdit }) => {
   };
 
   const fetchContacts = () => {
-    // This should be replaced with API call, once implemented
+    // TODO: This should be replaced with API call, once implemented
     setContacts(DUMMY_CONTACTS);
   };
 
   const fetchTags = () => {
-    // This should be replaced with API call, once implemented
+    // TODO: This should be replaced with API call, once implemented
     setTags(DUMMY_TAGS);
   };
 
