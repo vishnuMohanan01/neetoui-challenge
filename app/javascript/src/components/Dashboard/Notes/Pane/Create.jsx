@@ -10,10 +10,10 @@ const NewNotePane = ({ fetchNotes, showPane, setShowPane }) => {
   const onClose = () => setShowPane(false);
 
   return (
-    <Pane isOpen={showPane} onClose={onClose}>
+    <Pane isOpen={showPane} size="large" onClose={onClose}>
       <Pane.Header>
         <Typography style="h2" weight="semibold">
-          Create a New Note
+          Add New Note
         </Typography>
       </Pane.Header>
       <Form
