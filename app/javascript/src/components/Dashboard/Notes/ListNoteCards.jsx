@@ -4,15 +4,13 @@ import PropType from "prop-types";
 
 import Card from "components/Dashboard/Notes/Card";
 
-import { calculateAge, formatTime } from "./utils";
+import { getCreatedAtText, formatTime } from "./utils";
 
 const ListNoteCards = ({
   notes = [],
   setShowDeleteAlert,
   setSelectedNoteId,
 }) => {
-  const getCreatedAtText = timeStamp => `Created ${calculateAge(timeStamp)}`;
-
   const handleClickOnDelete = note => {
     setSelectedNoteId(note.id);
     setShowDeleteAlert(true);
