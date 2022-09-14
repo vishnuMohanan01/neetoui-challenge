@@ -22,7 +22,7 @@ const Card = ({
             icon={() => <MenuVertical color="#68737D" />}
           >
             {dropDownItems.map((item, idx) => (
-              <li key={idx} onClick={() => alert(`Clicked ${item.name}`)}>
+              <li key={idx} onClick={() => item.func()}>
                 {item.name}
               </li>
             ))}
