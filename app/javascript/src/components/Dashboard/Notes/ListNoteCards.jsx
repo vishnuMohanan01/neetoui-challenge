@@ -6,16 +6,26 @@ import Card from "components/Dashboard/Notes/Card";
 
 import { calculateAge, formatTime } from "./utils/prettyPrintTime";
 
-const ListNoteCards = ({ notes = [] }) => {
+const ListNoteCards = ({
+  notes = [],
+  setShowDeleteAlert,
+  setSelectedNoteId,
+}) => {
   const getCreatedAtText = timeStamp => `Created ${calculateAge(timeStamp)}`;
-  const getDropDownItems = () => [
+
+  const handleClickOnDelete = note => {
+    setSelectedNoteId(note.id);
+    setShowDeleteAlert(true);
+  };
+
+  const getDropDownItems = note => [
     {
       name: "Edit",
       func: () => {},
     },
     {
       name: "Delete",
-      func: () => {},
+      func: () => handleClickOnDelete(note),
     },
   ];
 
@@ -25,7 +35,7 @@ const ListNoteCards = ({ notes = [] }) => {
         <Card
           avatarUrl={"https://i.pravatar.cc/300"}
           description={note.description}
-          dropDownItems={getDropDownItems()}
+          dropDownItems={getDropDownItems(note)}
           key={note.id}
           tinyText={getCreatedAtText(note.created_at)}
           title={note.title}
@@ -47,6 +57,8 @@ ListNoteCards.propTypes = {
       user_id: PropType.string,
     })
   ),
+  setShowDeleteAlert: PropType.func,
+  setSelectedNoteId: PropType.func,
 };
 
 export default ListNoteCards;
