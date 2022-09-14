@@ -99,6 +99,7 @@ const NoteForm = ({ onClose, refetch, note, isEdit }) => {
               onClick={() => setSubmitted(true)}
             />
             <Button
+              className="text-gray-500"
               label="Cancel"
               size="large"
               style="text"
