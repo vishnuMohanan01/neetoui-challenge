@@ -17,7 +17,7 @@ const Notes = () => {
   const [showNewNotePane, setShowNewNotePane] = useState(false);
   const [showDeleteAlert, setShowDeleteAlert] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedNoteId, setSelectedNoteId] = useState(0);
+  const [selectedNoteId, setSelectedNoteId] = useState("");
   const [notes, setNotes] = useState([]);
   const [showMenuBar, setShowMenuBar] = useState(false);
 
