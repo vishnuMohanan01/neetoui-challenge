@@ -57,6 +57,8 @@ ListNoteCards.propTypes = {
       user_id: PropType.string,
     })
   ),
+  setShowDeleteAlert: PropType.bool,
+  setSelectedNoteId: PropType.string,
 };
 
 export default ListNoteCards;
