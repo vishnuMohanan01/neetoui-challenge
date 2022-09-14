@@ -15,7 +15,7 @@ import NewNotePane from "./Pane/Create";
 const Notes = () => {
   const [loading, setLoading] = useState(true);
   const [showNewNotePane, setShowNewNotePane] = useState(false);
-  const [showDeleteAlert, setShowDeleteAlert] = useState(true);
+  const [showDeleteAlert, setShowDeleteAlert] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedNoteId, setSelectedNoteId] = useState(0);
   const [notes, setNotes] = useState([]);
@@ -62,7 +62,11 @@ const Notes = () => {
           }}
         />
         {notes.length ? (
-          <ListNoteCards notes={notes} />
+          <ListNoteCards
+            notes={notes}
+            setSelectedNoteId={setSelectedNoteId}
+            setShowDeleteAlert={setShowDeleteAlert}
+          />
         ) : (
           <EmptyState
             image={EmptyNotesListImage}
