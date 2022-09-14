@@ -2,6 +2,7 @@ import React from "react";
 
 import { MenuVertical, Clock } from "@bigbinary/neeto-icons";
 import { Tag, Typography, Dropdown, Avatar, Tooltip } from "neetoui";
+import PropTypes from "prop-types";
 
 const Card = ({
   title,
@@ -51,5 +52,19 @@ const Card = ({
     </div>
   </div>
 );
+
+Card.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  tinyText: PropTypes.string,
+  toolTipText: PropTypes.string,
+  avatarUrl: PropTypes.string,
+  dropDownItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      func: PropTypes.func,
+    })
+  ),
+};
 
 export default Card;

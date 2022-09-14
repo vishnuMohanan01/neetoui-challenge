@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Search, Settings, Plus } from "@bigbinary/neeto-icons";
 import { Typography } from "neetoui";
 import { MenuBar as NeetoUIMenuBar } from "neetoui/layouts";
+import PropType from "prop-types";
 
 const MenuBar = ({ showMenu }) => {
   const [isSearchCollapsed, setIsSearchCollapsed] = useState(true);
@@ -66,6 +67,10 @@ const MenuBar = ({ showMenu }) => {
       </NeetoUIMenuBar>
     </div>
   );
+};
+
+MenuBar.propTypes = {
+  showMenu: PropType.bool,
 };
 
 export default MenuBar;
