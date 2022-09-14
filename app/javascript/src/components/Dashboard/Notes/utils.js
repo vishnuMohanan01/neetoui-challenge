@@ -1,8 +1,8 @@
-import moment from "moment";
+import dayjs from "lib/dayjs";
 
-export const calculateAge = timeStamp => moment(timeStamp).fromNow();
+export const calculateAge = timeStamp => dayjs(timeStamp).fromNow();
 
-export const formatTime = timeStamp => moment(timeStamp).format("ddd, hh:mmA");
+export const formatTime = timeStamp => dayjs(timeStamp).format("ddd, hh:mmA");
 
 export const getCreatedAtText = timeStamp =>
   `Created ${calculateAge(timeStamp)}`;
