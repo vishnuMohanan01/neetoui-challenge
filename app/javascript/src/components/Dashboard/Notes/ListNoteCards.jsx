@@ -4,7 +4,7 @@ import PropType from "prop-types";
 
 import Card from "components/Dashboard/Notes/Card";
 
-import { calculateAge, formatTime } from "./utils/prettyPrintTime";
+import { calculateAge, formatTime } from "./utils";
 
 const ListNoteCards = ({
   notes = [],
