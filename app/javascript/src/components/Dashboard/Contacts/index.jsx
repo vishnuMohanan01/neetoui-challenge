@@ -2,10 +2,10 @@ import React, { useState } from "react";
 
 import { Button } from "neetoui";
 import { Container, Header } from "neetoui/layouts";
+import { noop } from "utils";
 
 import MenuBar from "./MenuBar";
 import Table from "./Table";
-import { noop } from "./utils";
 
 const Contacts = () => {
   const [searchTerm, setSearchTerm] = useState("");
