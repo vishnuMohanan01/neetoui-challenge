@@ -76,7 +76,7 @@ const NoteForm = ({ onClose, refetch, note, isEdit }) => {
               required
               className="w-full flex-grow-0"
               label="Assigned Contact"
-              name="assignedContact"
+              name="assigned_contact"
               options={contacts}
               placeholder="Select Role"
             />

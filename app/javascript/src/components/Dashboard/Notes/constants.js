@@ -50,7 +50,7 @@ export const NOTES_FORM_VALIDATION_SCHEMA = yup.object().shape({
     .min(2, "Too Short!")
     .max(200, "Too Long!")
     .required("Description is required"),
-  assignedContact: yup
+  assigned_contact: yup
     .object()
     .shape({
       label: yup.string().oneOf(DUMMY_CONTACTS.map(contact => contact.label)),
