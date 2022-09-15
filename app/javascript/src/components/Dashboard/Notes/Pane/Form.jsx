@@ -6,9 +6,12 @@ import { Button, Pane } from "neetoui";
 import { Input, Textarea, Select } from "neetoui/formik";
 
 import notesApi from "apis/notes";
-import { DUMMY_CONTACTS, DUMMY_TAGS } from "components/constants";
 
-import { NOTES_FORM_VALIDATION_SCHEMA } from "../constants";
+import {
+  NOTES_FORM_VALIDATION_SCHEMA,
+  DUMMY_CONTACTS,
+  DUMMY_TAGS,
+} from "../constants";
 
 const NoteForm = ({ onClose, refetch, note, isEdit }) => {
   const [submitted, setSubmitted] = useState(false);
@@ -56,29 +59,26 @@ const NoteForm = ({ onClose, refetch, note, isEdit }) => {
         <Form className="w-full">
           <Pane.Body className="space-y-6">
             <Input
-              required
               className="w-full flex-grow-0"
               label="Title"
               name="title"
               placeholder="Enter title"
             />
             <Textarea
-              required
               className="w-full flex-grow-0"
               label="Description"
               name="description"
               placeholder="Enter note description"
             />
             <Select
-              required
               className="w-full flex-grow-0"
               label="Assigned Contact"
-              name="assignedContact"
+              name="assigned_contact"
               options={contacts}
               placeholder="Select Role"
             />
             <Select
-              required
+              isMulti
               className="w-full flex-grow-0"
               label="Tags"
               name="tags"
@@ -103,6 +103,7 @@ const NoteForm = ({ onClose, refetch, note, isEdit }) => {
               label="Cancel"
               size="large"
               style="text"
+              type="reset"
               onClick={onClose}
             />
           </Pane.Footer>
