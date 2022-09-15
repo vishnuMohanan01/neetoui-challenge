@@ -13,3 +13,35 @@ export const getContactsData = () =>
       id: idx + 1,
       created_at: formatDate(contact.created_at),
     }));
+
+export const buildContactTableColumns = (renderNameAndRole, renderDropDown) => [
+  {
+    dataIndex: "name_and_role",
+    key: "name_and_role",
+    title: "Name & Role",
+    width: 150,
+    render: renderNameAndRole,
+  },
+  {
+    dataIndex: "email",
+    ellipsis: {
+      showTitle: false,
+    },
+    key: "email",
+    title: "Email",
+    width: 200,
+  },
+  {
+    dataIndex: "created_at",
+    key: "created_at",
+    title: "Created at",
+    width: 100,
+  },
+  {
+    dataIndex: "action",
+    key: "action",
+    title: "",
+    width: 100,
+    render: renderDropDown,
+  },
+];

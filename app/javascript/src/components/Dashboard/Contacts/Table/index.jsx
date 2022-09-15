@@ -4,45 +4,21 @@ import { Table as NeetoUITable } from "neetoui";
 import { noop } from "utils";
 
 import Dropdown from "./Dropdown";
-import NameAndRole from "./NameRoleAndAvatar";
-import { getContactsData } from "./utils";
+import NameRoleAndAvatar from "./NameRoleAndAvatar";
+import { buildContactTableColumns, getContactsData } from "./utils";
 
 const Table = () => {
   const [contactsData, setContactsData] = useState([]);
 
-  const CONTACTS_TABLE_COLUMNS = [
-    {
-      dataIndex: "name_and_role",
-      key: "name_and_role",
-      title: "Name & Role",
-      width: 150,
-      render: (nameAndRole, { name, role }) => (
-        <NameAndRole name={name} role={role} />
-      ),
-    },
-    {
-      dataIndex: "email",
-      ellipsis: {
-        showTitle: false,
-      },
-      key: "email",
-      title: "Email",
-      width: 200,
-    },
-    {
-      dataIndex: "created_at",
-      key: "created_at",
-      title: "Created at",
-      width: 100,
-    },
-    {
-      dataIndex: "action",
-      key: "action",
-      title: "",
-      width: 100,
-      render: () => <Dropdown />,
-    },
-  ];
+  const renderNameAndRole = (nameAndRole, { name, role }) => (
+    <NameRoleAndAvatar name={name} role={role} />
+  );
+  const renderDropdown = () => <Dropdown />;
+
+  const contactTableColumns = buildContactTableColumns(
+    renderNameAndRole,
+    renderDropdown
+  );
 
   const fetchContactsData = () => {
     // TODO: Get data through API, once implemented
@@ -56,7 +32,7 @@ const Table = () => {
   return (
     <NeetoUITable
       rowSelection
-      columnData={CONTACTS_TABLE_COLUMNS}
+      columnData={contactTableColumns}
       currentPageNumber={1}
       defaultPageSize={9}
       handlePageChange={noop}
