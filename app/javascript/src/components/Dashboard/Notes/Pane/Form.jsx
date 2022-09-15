@@ -59,21 +59,18 @@ const NoteForm = ({ onClose, refetch, note, isEdit }) => {
         <Form className="w-full">
           <Pane.Body className="space-y-6">
             <Input
-              required
               className="w-full flex-grow-0"
               label="Title"
               name="title"
               placeholder="Enter title"
             />
             <Textarea
-              required
               className="w-full flex-grow-0"
               label="Description"
               name="description"
               placeholder="Enter note description"
             />
             <Select
-              required
               className="w-full flex-grow-0"
               label="Assigned Contact"
               name="assigned_contact"
@@ -81,7 +78,7 @@ const NoteForm = ({ onClose, refetch, note, isEdit }) => {
               placeholder="Select Role"
             />
             <Select
-              required
+              isMulti
               className="w-full flex-grow-0"
               label="Tags"
               name="tags"
@@ -106,6 +103,7 @@ const NoteForm = ({ onClose, refetch, note, isEdit }) => {
               label="Cancel"
               size="large"
               style="text"
+              type="reset"
               onClick={onClose}
             />
           </Pane.Footer>
