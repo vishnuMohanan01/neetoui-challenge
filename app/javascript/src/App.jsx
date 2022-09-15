@@ -2,6 +2,7 @@ import React from "react";
 
 import { AuthProvider } from "contexts/auth";
 import { UserProvider } from "contexts/user";
+import "lib/dayjs";
 
 import Main from "./components/Main";
 
