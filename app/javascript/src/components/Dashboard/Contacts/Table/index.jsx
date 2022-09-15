@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 
 import { Table as NeetoUITable } from "neetoui";
+import { noop } from "utils";
 
 import Dropdown from "./Dropdown";
 import NameAndRole from "./NameRoleAndAvatar";
 import { getContactsData } from "./utils";
-
-import { noop } from "../utils";
 
 const Table = () => {
   const [contactsData, setContactsData] = useState([]);
