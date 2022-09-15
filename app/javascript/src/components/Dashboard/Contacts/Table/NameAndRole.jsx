@@ -2,6 +2,8 @@ import React from "react";
 
 import { Avatar } from "neetoui";
 
+import { noop } from "../utils";
+
 const NameAndRole = ({ name, role }) => (
   <div className="flex flex-row items-center gap-x-1.5">
     <Avatar
@@ -10,7 +12,7 @@ const NameAndRole = ({ name, role }) => (
       user={{
         name,
       }}
-      onClick={function noRefCheck() {}}
+      onClick={noop}
     />
     <div className="ml-1 flex flex-col justify-start gap-y-0">
       <span className="h-4 font-semibold">{name}</span>
