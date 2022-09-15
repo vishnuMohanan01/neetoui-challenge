@@ -1,4 +1,4 @@
-import dayjs from "lib/dayjs";
+import dayjs from "dayjs";
 
 export const calculateAge = timeStamp => dayjs(timeStamp).fromNow();
 
