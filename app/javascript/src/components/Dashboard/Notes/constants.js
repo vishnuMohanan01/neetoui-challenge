@@ -3,24 +3,26 @@ import * as yup from "yup";
 export const NOTES_FORM_INITIAL_FORM_VALUES = {
   title: "",
   description: "",
+  assigned_contact: null,
+  tags: [],
 };
 
 export const DUMMY_CONTACTS = [
   {
     label: "Oliver Smith",
-    value: "Oliver Smith",
+    value: "oliver_smith",
   },
   {
     label: "Tony Stark",
-    value: "Tony Stark",
+    value: "tony_stark",
   },
   {
     label: "Sherlock Holmes",
-    value: "Sherlock Holmes",
+    value: "sherlock_holmes",
   },
   {
     label: "William Butcher",
-    value: "William Butcher",
+    value: "william_butcher",
   },
 ];
 
@@ -35,7 +37,7 @@ export const DUMMY_TAGS = [
   },
   {
     label: "User Experience",
-    value: "userExperience",
+    value: "user_experience",
   },
 ];
 
@@ -52,14 +54,15 @@ export const NOTES_FORM_VALIDATION_SCHEMA = yup.object().shape({
     .required("Description is required"),
   assigned_contact: yup
     .object()
+    .nullable()
     .shape({
       label: yup.string().oneOf(DUMMY_CONTACTS.map(contact => contact.label)),
       value: yup.string().oneOf(DUMMY_CONTACTS.map(contact => contact.value)),
     })
-    .nullable()
     .required("Should assign to a contact"),
   tags: yup
     .array()
+    .nullable()
     .of(
       yup.object().shape({
         label: yup.string().oneOf(DUMMY_TAGS.map(tag => tag.label)),
