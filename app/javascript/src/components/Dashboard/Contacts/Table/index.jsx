@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-import { MenuHorizontal } from "neetoicons";
-import { Table as NeetoUITable, Dropdown } from "neetoui";
+import { Table as NeetoUITable } from "neetoui";
 
+import Dropdown from "./Dropdown";
 import NameAndRole from "./NameAndRole";
 import { getContactsData } from "./utils";
 
@@ -41,16 +41,7 @@ const Table = () => {
       key: "action",
       title: "",
       width: 100,
-      render: () => (
-        <Dropdown
-          buttonStyle="text"
-          className="text-gray-800"
-          icon={() => <MenuHorizontal color="#68737D" />}
-        >
-          <li>Edit</li>
-          <li>Delete</li>
-        </Dropdown>
-      ),
+      render: () => <Dropdown />,
     },
   ];
 
