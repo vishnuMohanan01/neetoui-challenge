@@ -1,4 +1,4 @@
-import dayjs from "lib/dayjs";
+import dayjs from "dayjs";
 
 import { CONTACTS_UNIQUE_DATA } from "./constants";
 
