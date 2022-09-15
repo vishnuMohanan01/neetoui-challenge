@@ -6,9 +6,12 @@ import { Button, Pane } from "neetoui";
 import { Input, Textarea, Select } from "neetoui/formik";
 
 import notesApi from "apis/notes";
-import { DUMMY_CONTACTS, DUMMY_TAGS } from "components/constants";
 
-import { NOTES_FORM_VALIDATION_SCHEMA } from "../constants";
+import {
+  NOTES_FORM_VALIDATION_SCHEMA,
+  DUMMY_CONTACTS,
+  DUMMY_TAGS,
+} from "../constants";
 
 const NoteForm = ({ onClose, refetch, note, isEdit }) => {
   const [submitted, setSubmitted] = useState(false);
