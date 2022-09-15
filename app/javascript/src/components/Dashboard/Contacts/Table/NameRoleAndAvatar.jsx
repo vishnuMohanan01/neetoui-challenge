@@ -4,7 +4,7 @@ import { Avatar } from "neetoui";
 
 import { noop } from "../utils";
 
-const NameAndRole = ({ name, role }) => (
+const NameRoleAndAvatar = ({ name, role }) => (
   <div className="flex flex-row items-center gap-x-1.5">
     <Avatar
       className="cursor-pointer"
@@ -21,4 +21,4 @@ const NameAndRole = ({ name, role }) => (
   </div>
 );
 
-export default NameAndRole;
+export default NameRoleAndAvatar;
