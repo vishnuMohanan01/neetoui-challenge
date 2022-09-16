@@ -6,11 +6,18 @@ import { Container, Header } from "neetoui/layouts";
 import MenuBar from "./MenuBar";
 import NewContactPane from "./Pane/Create";
 import Table from "./Table";
+import { getContactsData } from "./utils";
 
 const Contacts = () => {
-  const [showNewContactPane, setShowNewContactPane] = useState(true);
+  const [showNewContactPane, setShowNewContactPane] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [showMenuBar, setShowMenuBar] = useState(false);
+  const [contactsData, setContactsData] = useState([]);
+
+  const fetchContactsData = () => {
+    // TODO: Get data through API, once implemented
+    setContactsData(getContactsData());
+  };
 
   return (
     <>
@@ -32,7 +39,10 @@ const Contacts = () => {
             onChange: e => setSearchTerm(e.target.value),
           }}
         />
-        <Table />
+        <Table
+          contactsData={contactsData}
+          fetchContactsData={fetchContactsData}
+        />
         <NewContactPane showPane={showNewContactPane} />
       </Container>
     </>

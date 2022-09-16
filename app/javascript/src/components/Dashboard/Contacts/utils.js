@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 
-import { CONTACTS_UNIQUE_DATA } from "./constants";
+import { CONTACTS_UNIQUE_DATA } from "./Table/constants";
 
 export const formatDate = timeStamp => dayjs(timeStamp).format("MMM D, YYYY");
 
