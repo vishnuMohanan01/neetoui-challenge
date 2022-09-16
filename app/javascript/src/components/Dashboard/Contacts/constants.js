@@ -1,11 +1,39 @@
 import * as yup from "yup";
 
-export const NOTES_FORM_INITIAL_FORM_VALUES = {
-  title: "",
-  description: "",
+export const DUMMY_ROLES = [
+  {
+    label: "Owner",
+    value: "owner",
+  },
+  {
+    label: "Manager",
+    value: "manager",
+  },
+];
+
+export const CONTACTS_FORM_INITIAL_FORM_VALUES = {
+  first_name: "",
+  last_name: "",
+  email: "",
+  role: null,
 };
 
-export const NOTES_FORM_VALIDATION_SCHEMA = yup.object().shape({
-  title: yup.string().required("Title is required"),
-  description: yup.string().required("Description is required"),
+export const CONTACTS_FORM_VALIDATION_SCHEMA = yup.object().shape({
+  first_name: yup.string().required("First name is required"),
+  last_name: yup.string().required("Last name is required"),
+  email: yup.string().email().required("Email address is required"),
+  role: yup
+    .object()
+    .shape({
+      label: yup
+        .string()
+        .oneOf(DUMMY_ROLES.map(role => role.label))
+        .required("No label found"),
+      value: yup
+        .string()
+        .oneOf(DUMMY_ROLES.map(role => role.value))
+        .required("No value found"),
+    })
+    .nullable()
+    .required("Role is required"),
 });

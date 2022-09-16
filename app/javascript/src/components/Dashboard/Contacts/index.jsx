@@ -2,14 +2,13 @@ import React, { useState } from "react";
 
 import { Button } from "neetoui";
 import { Container, Header } from "neetoui/layouts";
-import { noop } from "utils";
 
 import MenuBar from "./MenuBar";
 import NewContactPane from "./Pane/Create";
 import Table from "./Table";
 
 const Contacts = () => {
-  const [showNewContactPane, setShowNewContactPane] = useState(false);
+  const [showNewContactPane, setShowNewContactPane] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [showMenuBar, setShowMenuBar] = useState(false);
 

@@ -3,24 +3,20 @@ import React, { useEffect, useState } from "react";
 import { Formik, Form } from "formik";
 import { Check } from "neetoicons";
 import { Button, Pane } from "neetoui";
-import { Input, Textarea, Select } from "neetoui/formik";
+import { Input, Select } from "neetoui/formik";
 
-import notesApi from "apis/notes";
-import { DUMMY_CONTACTS, DUMMY_TAGS } from "components/constants";
-
-import { NOTES_FORM_VALIDATION_SCHEMA } from "../constants";
+import { CONTACTS_FORM_VALIDATION_SCHEMA, DUMMY_ROLES } from "../constants";
 
 const NoteForm = ({ onClose, refetch, note, isEdit }) => {
   const [submitted, setSubmitted] = useState(false);
-  const [contacts, setContacts] = useState([]);
-  const [tags, setTags] = useState([]);
+  const [roles, setRoles] = useState([]);
 
-  const handleSubmit = async values => {
+  const handleSubmit = async () => {
     try {
       if (isEdit) {
-        await notesApi.update(note.id, values);
+        // await notesApi.update(note.id, values);
       } else {
-        await notesApi.create(values);
+        // await notesApi.create(values);
       }
       refetch();
       onClose();
@@ -29,19 +25,13 @@ const NoteForm = ({ onClose, refetch, note, isEdit }) => {
     }
   };
 
-  const fetchContacts = () => {
+  const fetchRoles = () => {
     // TODO: This should be replaced with API call, once implemented
-    setContacts(DUMMY_CONTACTS);
-  };
-
-  const fetchTags = () => {
-    // TODO: This should be replaced with API call, once implemented
-    setTags(DUMMY_TAGS);
+    setRoles(DUMMY_ROLES);
   };
 
   useEffect(() => {
-    fetchContacts();
-    fetchTags();
+    fetchRoles();
   });
 
   return (
@@ -49,41 +39,41 @@ const NoteForm = ({ onClose, refetch, note, isEdit }) => {
       initialValues={note}
       validateOnBlur={submitted}
       validateOnChange={submitted}
-      validationSchema={NOTES_FORM_VALIDATION_SCHEMA}
+      validationSchema={CONTACTS_FORM_VALIDATION_SCHEMA}
       onSubmit={handleSubmit}
     >
       {({ isSubmitting }) => (
         <Form className="w-full">
           <Pane.Body className="space-y-6">
+            <div className="flex w-full space-x-2">
+              <Input
+                className="w-full flex-grow-0"
+                label="First Name"
+                name="first_name"
+                placeholder="Enter first name"
+                size="large"
+              />
+              <Input
+                className="w-full flex-grow-0"
+                label="Last Name"
+                name="last_name"
+                placeholder="Enter last name"
+                size="large"
+              />
+            </div>
             <Input
-              required
               className="w-full flex-grow-0"
-              label="Title"
-              name="title"
-              placeholder="Enter title"
-            />
-            <Textarea
-              required
-              className="w-full flex-grow-0"
-              label="Description"
-              name="description"
-              placeholder="Enter note description"
+              label="Email Address"
+              name="email"
+              placeholder="Enter your email address"
+              type="email"
             />
             <Select
-              required
               className="w-full flex-grow-0"
-              label="Assigned Contact"
-              name="assignedContact"
-              options={contacts}
+              label="Role"
+              name="role"
+              options={roles}
               placeholder="Select Role"
-            />
-            <Select
-              required
-              className="w-full flex-grow-0"
-              label="Tags"
-              name="tags"
-              options={tags}
-              placeholder="Select Tag"
             />
           </Pane.Body>
           <Pane.Footer>
