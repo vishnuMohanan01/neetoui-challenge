@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 
 import { Table as NeetoUITable } from "neetoui";
 import { noop } from "utils";
 
 import Dropdown from "./Dropdown";
 import NameRoleAndAvatar from "./NameRoleAndAvatar";
-import { buildContactTableColumns, getContactsData } from "./utils";
 
-const Table = () => {
-  const [contactsData, setContactsData] = useState([]);
+import { buildContactTableColumns } from "../utils";
 
+const Table = ({ fetchContacts, contactsData }) => {
   const renderNameAndRole = (nameAndRole, { name, role }) => (
     <NameRoleAndAvatar name={name} role={role} />
   );
@@ -20,13 +19,8 @@ const Table = () => {
     renderDropdown
   );
 
-  const fetchContactsData = () => {
-    // TODO: Get data through API, once implemented
-    setContactsData(getContactsData());
-  };
-
   useEffect(() => {
-    fetchContactsData();
+    fetchContacts();
   }, []);
 
   return (

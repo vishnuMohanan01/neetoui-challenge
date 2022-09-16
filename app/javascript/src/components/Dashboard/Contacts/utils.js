@@ -1,4 +1,5 @@
 import dayjs from "dayjs";
+import { Toastr } from "neetoui";
 
 import { CONTACTS_UNIQUE_DATA } from "./constants";
 
@@ -45,3 +46,8 @@ export const buildContactTableColumns = (renderNameAndRole, renderDropDown) => [
     render: renderDropDown,
   },
 ];
+
+export const fakeContactApi = {
+  update: () => Toastr.success("Contact successfully updated!"),
+  create: () => Toastr.success("Contact successfully added!"),
+};
