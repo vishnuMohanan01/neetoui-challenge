@@ -40,7 +40,11 @@ const Contacts = () => {
           }}
         />
         <Table contactsData={contactsData} fetchContacts={fetchContacts} />
-        <NewContactPane showPane={showNewContactPane} />
+        <NewContactPane
+          fetchContacts={fetchContacts}
+          setShowPane={setShowNewContactPane}
+          showPane={showNewContactPane}
+        />
       </Container>
     </>
   );

@@ -7,7 +7,7 @@ import { Input, Select } from "neetoui/formik";
 
 import { CONTACTS_FORM_VALIDATION_SCHEMA, DUMMY_ROLES } from "../constants";
 
-const NoteForm = ({ onClose, refetch, note, isEdit }) => {
+const ContactForm = ({ onClose, refetch, note, isEdit }) => {
   const [submitted, setSubmitted] = useState(false);
   const [roles, setRoles] = useState([]);
 
@@ -102,4 +102,4 @@ const NoteForm = ({ onClose, refetch, note, isEdit }) => {
   );
 };
 
-export default NoteForm;
+export default ContactForm;
