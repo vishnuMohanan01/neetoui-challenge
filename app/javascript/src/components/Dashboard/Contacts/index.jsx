@@ -14,7 +14,7 @@ const Contacts = () => {
   const [showMenuBar, setShowMenuBar] = useState(false);
   const [contactsData, setContactsData] = useState([]);
 
-  const fetchContactsData = () => {
+  const fetchContacts = () => {
     // TODO: Get data through API, once implemented
     setContactsData(getContactsData());
   };
@@ -39,10 +39,7 @@ const Contacts = () => {
             onChange: e => setSearchTerm(e.target.value),
           }}
         />
-        <Table
-          contactsData={contactsData}
-          fetchContactsData={fetchContactsData}
-        />
+        <Table contactsData={contactsData} fetchContacts={fetchContacts} />
         <NewContactPane showPane={showNewContactPane} />
       </Container>
     </>

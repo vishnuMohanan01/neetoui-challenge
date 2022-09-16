@@ -8,7 +8,7 @@ import NameRoleAndAvatar from "./NameRoleAndAvatar";
 
 import { buildContactTableColumns } from "../utils";
 
-const Table = ({ fetchContactsData, contactsData }) => {
+const Table = ({ fetchContacts, contactsData }) => {
   const renderNameAndRole = (nameAndRole, { name, role }) => (
     <NameRoleAndAvatar name={name} role={role} />
   );
@@ -20,7 +20,7 @@ const Table = ({ fetchContactsData, contactsData }) => {
   );
 
   useEffect(() => {
-    fetchContactsData();
+    fetchContacts();
   }, []);
 
   return (
