@@ -14,6 +14,7 @@ const ContactForm = ({ onClose, refetch, contact, isEdit }) => {
 
   const handleSubmit = async values => {
     try {
+      // TODO: implement Edit feature
       if (isEdit) {
         // TODO: replace with update API request, once implemented
         fakeContactApi.update(contact.id, values);
