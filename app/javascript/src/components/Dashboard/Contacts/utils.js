@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import { Toastr } from "neetoui";
 
-import { CONTACTS_UNIQUE_DATA } from "./Table/constants";
+import { CONTACTS_UNIQUE_DATA } from "./constants";
 
 export const formatDate = timeStamp => dayjs(timeStamp).format("MMM D, YYYY");
 
