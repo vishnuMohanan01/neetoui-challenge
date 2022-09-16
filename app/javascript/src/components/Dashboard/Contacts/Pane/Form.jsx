@@ -6,17 +6,20 @@ import { Button, Pane } from "neetoui";
 import { Input, Select } from "neetoui/formik";
 
 import { CONTACTS_FORM_VALIDATION_SCHEMA, DUMMY_ROLES } from "../constants";
+import { fakeContactApi } from "../utils";
 
-const ContactForm = ({ onClose, refetch, note, isEdit }) => {
+const ContactForm = ({ onClose, refetch, contact, isEdit }) => {
   const [submitted, setSubmitted] = useState(false);
   const [roles, setRoles] = useState([]);
 
-  const handleSubmit = async () => {
+  const handleSubmit = async values => {
     try {
       if (isEdit) {
-        // await notesApi.update(note.id, values);
+        // TODO: replace with update API request, once implemented
+        fakeContactApi.update(contact.id, values);
       } else {
-        // await notesApi.create(values);
+        // TODO: replace with create API request, once implemented
+        fakeContactApi.create(values);
       }
       refetch();
       onClose();
@@ -36,7 +39,7 @@ const ContactForm = ({ onClose, refetch, note, isEdit }) => {
 
   return (
     <Formik
-      initialValues={note}
+      initialValues={contact}
       validateOnBlur={submitted}
       validateOnChange={submitted}
       validationSchema={CONTACTS_FORM_VALIDATION_SCHEMA}

@@ -1,4 +1,5 @@
 import dayjs from "dayjs";
+import { noop } from "utils";
 
 import { CONTACTS_UNIQUE_DATA } from "./Table/constants";
 
@@ -45,3 +46,8 @@ export const buildContactTableColumns = (renderNameAndRole, renderDropDown) => [
     render: renderDropDown,
   },
 ];
+
+export const fakeContactApi = {
+  update: noop,
+  create: noop,
+};

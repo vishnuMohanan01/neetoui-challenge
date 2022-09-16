@@ -6,7 +6,7 @@ import Form from "./Form";
 
 import { CONTACTS_FORM_INITIAL_FORM_VALUES } from "../constants";
 
-const NewContactPane = ({ fetchNotes, showPane, setShowPane }) => {
+const NewContactPane = ({ fetchContacts, showPane, setShowPane }) => {
   const onClose = () => setShowPane(false);
 
   return (
@@ -17,9 +17,9 @@ const NewContactPane = ({ fetchNotes, showPane, setShowPane }) => {
         </Typography>
       </Pane.Header>
       <Form
+        contact={CONTACTS_FORM_INITIAL_FORM_VALUES}
         isEdit={false}
-        note={CONTACTS_FORM_INITIAL_FORM_VALUES}
-        refetch={fetchNotes}
+        refetch={fetchContacts}
         onClose={onClose}
       />
     </Pane>
